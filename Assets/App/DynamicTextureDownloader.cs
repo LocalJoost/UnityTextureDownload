@@ -24,7 +24,7 @@ public class DynamicTextureDownloader : MonoBehaviour
     private void CheckLoadImage()
     {
         // No image requested
-        if (ImageUrl == null)
+        if (string.IsNullOrEmpty(ImageUrl))
         {
             return;
         }
