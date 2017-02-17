@@ -44,7 +44,6 @@ public class DynamicTextureDownloader : MonoBehaviour
             Destroy(GetComponent<Renderer>().material.mainTexture);
             GetComponent<Renderer>().material.mainTexture = _imageLoader.texture;
             Destroy(_imageLoader.texture);
-            _imageLoader = null;
 
             if (ResizePlane)
             {
