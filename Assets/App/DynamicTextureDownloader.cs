@@ -41,7 +41,10 @@ public class DynamicTextureDownloader : MonoBehaviour
         {
             // Apparently an image was loading and is now done. Get the texture and apply
             _appliedToTexture = true;
+            Destroy(GetComponent<Renderer>().material.mainTexture);
             GetComponent<Renderer>().material.mainTexture = _imageLoader.texture;
+            Destroy(_imageLoader.texture);
+            _imageLoader = null;
 
             if (ResizePlane)
             {
